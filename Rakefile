@@ -63,3 +63,9 @@ task :generate_command do
   command_factory.sub!(/^$/, "#include \"#{name}.h\"\n")
   File.open(command_factory_file_name, "w") { |file| file.write(command_factory) }
 end
+
+desc "Remove built files"
+task :clean do
+  system('make clean')
+  system('git clean -fxd Makefile bin pkg src')
+end

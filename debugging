@@ -1,0 +1,61 @@
+Received "Reset" 
+Started "Reset" 
+Finished "Reset" with response "Success()" 
+Wrote response true "" 
+Received "Visit" 
+Started "Visit" 
+Load started 
+"Visit" started page load 
+Started request to "http://127.0.0.1:52635/" 
+webkit_server(2017,0x10d881000) malloc: *** error for object 0x1048c06a0: pointer being freed was not allocated
+*** set a breakpoint in malloc_error_break to debug
+Finished "Visit" with response "Success()" 
+
+Received "Reset" 
+Started "Reset" 
+Finished "Reset" with response "Success()" 
+Wrote response true "" 
+Received "Visit" 
+Started "Visit" 
+Load started 
+"Visit" started page load 
+Started request to "http://127.0.0.1:54222/" 
+webkit_server(2651,0x10ee52000) malloc: *** error for object 0x10a9110b0: pointer being freed was not allocated
+*** set a breakpoint in malloc_error_break to debug
+
+
+Received "Reset" 
+Started "Reset" 
+Finished "Reset" with response "Success()" 
+Wrote response true "" 
+Received "Visit" 
+Started "Visit" 
+Load started 
+"Visit" started page load 
+Started request to "http://127.0.0.1:53053/" 
+Finished "Visit" with response "Success()" 
+
+Program received signal EXC_BAD_ACCESS, Could not access memory.
+Reason: KERN_INVALID_ADDRESS at address: 0x000000010c5b70fe
+
+#0  0x00007fff8897e6c0 in malloc_error_break ()
+#1  0x00007fff8897e805 in free ()
+#2  0x000000010315bd3e in QString::free ()
+#3  0x00000001031c2c29 in QUrlPrivate::authority ()
+#4  0x00000001031ca002 in QUrlPrivate::toEncoded ()
+#5  0x00000001031cb0a4 in QUrlPrivate::validate ()
+#6  0x00000001031cb305 in QUrl::port ()
+#7  0x0000000102faaedb in QHttpThreadDelegate::startRequest ()
+#8  0x0000000103012c1b in QHttpThreadDelegate::qt_static_metacall ()
+#9  0x000000010322f861 in QObject::event ()
+#10 0x00000001022fbfad in QApplicationPrivate::notify_helper ()
+#11 0x0000000102302fe4 in QApplication::notify ()
+#12 0x000000010321b75c in QCoreApplication::notifyInternal ()
+#13 0x000000010321d380 in QCoreApplicationPrivate::sendPostedEvents ()
+#14 0x0000000103250832 in QEventDispatcherUNIX::processEvents ()
+#15 0x000000010321a664 in QEventLoop::processEvents ()
+#16 0x000000010321aa14 in QEventLoop::exec ()
+#17 0x0000000103105198 in QThread::exec ()
+#18 0x00000001031085aa in QThreadPrivate::start ()
+#19 0x00007fff8892c8bf in _pthread_start ()
+#20 0x00007fff8892fb75 in thread_start ()

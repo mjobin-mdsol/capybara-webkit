@@ -10,7 +10,7 @@ Server::Server(QObject *parent) : QObject(parent) {
 
 bool Server::start() {
   connect(m_tcp_server, SIGNAL(newConnection()), this, SLOT(handleConnection()));
-  return m_tcp_server->listen(QHostAddress::LocalHost, 0);
+  return m_tcp_server->listen(QHostAddress::LocalHost, 12345);
 }
 
 quint16 Server::server_port() const {

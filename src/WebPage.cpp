@@ -124,6 +124,7 @@ void WebPage::frameCreated(QWebFrame * frame) {
 }
 
 void WebPage::injectJavascriptHelpers() {
+  qDebug() << "injectJavascriptHelpers";
   QWebFrame* frame = qobject_cast<QWebFrame *>(QObject::sender());
   frame->evaluateJavaScript(m_capybaraJavascript);
 }

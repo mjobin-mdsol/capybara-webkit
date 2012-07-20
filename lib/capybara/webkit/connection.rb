@@ -13,7 +13,8 @@ module Capybara::Webkit
       @socket_class = options[:socket_class] || TCPSocket
       @stdout = options.has_key?(:stdout) ?  options[:stdout] : $stdout
       @command = options[:command] || SERVER_PATH
-      start_server
+      # start_server
+      @port = 12345
       connect
     end
 

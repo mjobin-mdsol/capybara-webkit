@@ -7,7 +7,8 @@ Visit::Visit(WebPageManager *manager, QStringList &arguments, QObject *parent) :
 }
 
 void Visit::start() {
-  QUrl requestedUrl = QUrl::fromEncoded(arguments()[0].toUtf8(), QUrl::StrictMode);
-  page()->currentFrame()->load(QUrl(requestedUrl));
+  QString urlString = QString(arguments()[0].toUtf8());
+  QUrl requestedUrl = QUrl(urlString, QUrl::StrictMode);
+  page()->currentFrame()->load(requestedUrl);
   emit finished(new Response(true));
 }

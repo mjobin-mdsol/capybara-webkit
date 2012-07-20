@@ -6,7 +6,7 @@ WebPageManager::WebPageManager(QObject *parent) : QObject(parent) {
   m_ignoreSslErrors = false;
   m_cookieJar = new NetworkCookieJar(this);
   m_success = true;
-  m_loggingEnabled = false;
+  m_loggingEnabled = true;
   m_ignoredOutput = new QString();
   createPage(this)->setFocus();
 }
@@ -86,6 +86,7 @@ bool WebPageManager::ignoreSslErrors() {
 }
 
 void WebPageManager::reset() {
+  qDebug() << "reset";
   m_cookieJar->clearCookies();
   m_pages.first()->deleteLater();
   m_pages.clear();
