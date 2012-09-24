@@ -1,3 +1,10 @@
 source "http://rubygems.org"
+gem "capybara", :git=>"git://github.com/jnicklas/capybara.git", :tag=>"2.0.0.beta2"
+gem "json"
+gem "sinatra"
+gem "rake"
+gem "addressable"
+gem "mini_magick"
+gem "diff-lcs"
+gem "rspec"
 
-gemspec
